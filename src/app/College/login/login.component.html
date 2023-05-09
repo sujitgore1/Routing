@@ -1,0 +1,18 @@
+<h1>Login component from root module</h1>
+<button type="button" class="btn btn-primary" routerLink="">Home</button>
+<h1 class="text-primary">Student Details</h1>
+<div class="login position-absolute top-50 start-50 translate-middle m-5 rounded-4">
+    <form name="myForm" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+        <div class="form-group p-4">
+            <input type="text" class="form-control p-4 rounded-pill" name="uname" placeholder="Username" #uname="ngModel" [(ngModel)]="un">
+        </div>
+    
+        <div class="form-group p-4 pt-0">
+            <input type="password" class="form-control p-4 rounded-pill" name="pass" placeholder="Password" #pass="ngModel" [(ngModel)]="ps">
+        </div>
+    
+        <div class="form-group position-absolute start-50 translate-middle mt-4">
+            <button class="btn btn-warning ps-4 pe-4" (click)="navigateToStud()" >Login</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<h1>Data from parent component</h1>
+<p>Data recieve from child to parent <b>{{recieveChild}}</b></p>
+<p>Data recieve from outer child to parent <b>{{recieveOuterChild}}</b></p>
+
+
+
+<app-inner-child [dataFromParent]="data" (childEvent)="fetchChild($event)"></app-inner-child>
+
+
+
+<app-outer-child [valueFromParent]="value"></app-outer-child>

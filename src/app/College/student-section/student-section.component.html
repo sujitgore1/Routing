@@ -1,0 +1,24 @@
+<h1>Student component from root module</h1>
+<button type="button" class="btn btn-primary" routerLink="">Home</button>
+<h1 class="text-success">Student Data from login component</h1>
+<table class="table table-success">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let dt of recieveData">
+        <td>{{dt.id}}</td>
+        <td>{{dt.uname}}</td>
+        <td>{{dt.pass}}</td>
+        <td>
+            <button type="button" class="btn btn-danger" (click)="onDel(dt.id)">Delete</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-warning" (click)="onUpdate(dt)">Update</button>
+        </td>
+    </tr>
+</table>
