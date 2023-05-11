@@ -9,11 +9,12 @@ import { ErrorComponent } from './College/error/error.component';
 import { ParentComponent } from './College/parent/parent.component';
 import { CompAComponent } from './College/parent/ServiceCommunication/comp-a/comp-a.component';
 import { CompBComponent } from './College/parent/ServiceCommunication/comp-b/comp-b.component';
+import { AuthguardGuard } from './Guards/authguard.guard';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"stafsec",component:StaffSectionComponent},
-  {path:"studsec",component:StudentSectionComponent},
+  {path:"studsec",component:StudentSectionComponent,canActivate : [AuthguardGuard]},
   {path:"login",component:LoginComponent},
   {path:"aboutus",component:AboutUsComponent},
   {path:"datacommu",component:ParentComponent},

@@ -6,4 +6,17 @@ import { Injectable } from '@angular/core';
 export class ConditionService {
 
   constructor() { }
+  isLoggedIn : boolean = false
+
+  login(){
+    this.isLoggedIn = true
+  }
+
+  logOut(){
+    this.isLoggedIn = false
+  }
+  
+  authenticate(){
+    return this.isLoggedIn
+  }
 }

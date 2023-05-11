@@ -3,6 +3,7 @@ import { RouterService } from '../Services/router.service';
 import { Router } from '@angular/router';
 import { PatchService } from '../student-section/patch.service';
 import { NgModel } from '@angular/forms';
+import { ConditionService } from 'src/app/Guards/condition.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
 
 
 
-  constructor(private api : RouterService, private route : Router,private patch:PatchService){
+  constructor(private api : RouterService, private route : Router,private patch:PatchService,private condition : ConditionService){
     this.getStudData()
   }
 
@@ -41,5 +42,9 @@ export class LoginComponent {
     this.route.navigateByUrl('studsec')
     this.patch.un = this.un
     this.patch.ps = this.ps
+    this.condition.login()
+    if(this.condition.isLoggedIn == true){
+      alert("You have logged in successfully")
+    }
   }
 }

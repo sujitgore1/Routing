@@ -8,7 +8,7 @@
           <a class="nav-link" routerLink="stafsec">Staff Section</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="navigateToStud()">Student Section</a>
+          <a class="nav-link" (click)="navigateToStud()" (click)="showMessage()">Student Section</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="navigateToLogin()">Login</a>
@@ -22,9 +22,9 @@
         <!-- <li class="nav-item">
           <a class="nav-link">Authenticate</a>
         </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link">Logout</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" (click)="logOut()">Logout</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="componentA">Comp A</a>
         </li>

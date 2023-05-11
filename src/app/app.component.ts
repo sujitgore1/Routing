@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConditionService } from './Guards/condition.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'router';
 
-  constructor(private route : Router){
+  constructor(private route : Router, private condition : ConditionService){
 
   }
   navigateToStud(){
@@ -22,5 +23,18 @@ export class AppComponent {
   
   dialogueForNotifications(){
     alert("This is component from feature module")
+  }
+
+  logOut(){
+    this.condition.logOut()
+  }
+
+  showMessage(){
+    if(this.condition.isLoggedIn == true){
+      alert("You have logged in successfully")
+    }else{
+      alert("You have to login first")
+      this.route.navigateByUrl('login')
+    }
   }
 }
