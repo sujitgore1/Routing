@@ -6,17 +6,21 @@ import { Injectable } from '@angular/core';
 export class PatchService {
 
   constructor() {
-    this.setData
+    
    }
 
+   public showSubmit : boolean = true
+   public showUpdate : boolean = false
    public recieveData:any
+   public id:any
    public un:any
    public ps:any
-
+   
    setData(data:any){
-    data.uname = this.un
-    data.pass = this.ps
+    this.id = data.id
+    this.un = data.uname
+    this.ps = data.pass
     console.log(data)
-    return this.recieveData = data
+    this.recieveData = data
    }
 }

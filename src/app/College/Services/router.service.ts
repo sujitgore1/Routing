@@ -19,6 +19,10 @@ export class RouterService {
   deleteStudentData(id:any){
     return this.http.delete("http://localhost:3000/Students/"+id)
   }
+
+  updateData(data:any){
+    return this.http.put("http://localhost:3000/Students/"+data.id,data)
+  }
 }
 
 

@@ -1,3 +1,39 @@
 {
-  "Students": []
+  "Students": [
+    {
+      "id": 1,
+      "uname": "Sujit",
+      "pass": "Shiv@1111"
+    },
+    {
+      "id": 2,
+      "uname": "Sagar",
+      "pass": "Pass@1234"
+    },
+    {
+      "uname": "Shivtej",
+      "pass": "12345678",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "uname": "Alex",
+      "pass": "12345678"
+    },
+    {
+      "uname": "Anuraj",
+      "pass": "Pass123456",
+      "id": 5
+    },
+    {
+      "uname": "Shravan",
+      "pass": "Shravan123456",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "uname": "Shivani",
+      "pass": "Shivani123456"
+    }
+  ]
 }
