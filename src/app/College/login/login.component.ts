@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterService } from '../Services/router.service';
 import { Router } from '@angular/router';
 import { PatchService } from '../student-section/patch.service';
@@ -11,10 +11,12 @@ import { ConditionService } from 'src/app/Guards/condition.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
- @ViewChild("frm") form:any = NgModel
+  public idd:any
   public un:any
   public ps:any
-
+  public serviceData : any
+  public showSubmit : boolean = true
+  public showUpdate : boolean = false
 
 
 
@@ -29,6 +31,7 @@ export class LoginComponent {
     this.api.storeStudentData(formData.value).subscribe((res)=>{
       console.log(res)
     })
+    this.navigateToStud()
   }
 
   getStudData(){
@@ -40,11 +43,31 @@ export class LoginComponent {
   navigateToStud(){
     // confirm('Do you want to save username password')
     this.route.navigateByUrl('studsec')
-    this.patch.un = this.un
-    this.patch.ps = this.ps
+    
     this.condition.login()
     if(this.condition.isLoggedIn == true){
       alert("You have logged in successfully")
     }
+  }
+
+  patchData(){
+    this.serviceData = this.patch.recieveData
+    this.idd = this.patch.id
+    this.un = this.patch.un
+    this.ps = this.patch.ps
+    this.showSubmit = this.patch.showSubmit
+    this.showUpdate = this.patch.showUpdate
+  }
+
+  ngAfterContentInit(){
+    this.patchData()
+    console.log(this.serviceData)
+  }
+
+  updateData(data:any){
+    console.log(data.value)
+    this.api.updateData(data.value).subscribe((res:any)=>{
+      console.log(res)
+    })
   }
 }

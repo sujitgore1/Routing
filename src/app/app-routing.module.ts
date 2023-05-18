@@ -14,7 +14,7 @@ import { AuthguardGuard } from './Guards/authguard.guard';
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"stafsec",component:StaffSectionComponent},
-  {path:"studsec",component:StudentSectionComponent,canActivate : [AuthguardGuard]},
+  {path:"studsec",component:StudentSectionComponent, canActivate : [AuthguardGuard]},
   {path:"login",component:LoginComponent},
   {path:"aboutus",component:AboutUsComponent},
   {path:"datacommu",component:ParentComponent},
